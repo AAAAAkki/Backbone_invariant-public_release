@@ -11,16 +11,16 @@ descriptors based on backbone rigid invariants. It enables:
 
 Main Components
 --------------
-====================     ==============================================
-Module                   Description
-====================     ==============================================
-:mod:`.structure`        Protein structure data model (Entry/Chain/Residue/Atom)
-:mod:`.invariant`        BRI and LAI computation
+====================      ==============================================
+Module                    Description
+====================      ==============================================
+:mod:`.structure`         Protein structure data model (Entry/Chain/Residue/Atom)
+:mod:`.invariant`         BRI and LAI computation
 :mod:`.invariant_compare` Structural comparison and near-duplicate search
-:mod:`.filter`           Structure validation and cleaning
-:mod:`.clash_filter`     Atom-clash detection
-:mod:`.base`             Core utilities and mathematical functions
-====================     ==============================================
+:mod:`.filter`            Structure validation and cleaning
+:mod:`.clash_filter`      Atom-clash detection
+:mod:`.base`              Core utilities and mathematical functions
+====================      ==============================================
 
 Example Usage
 ------------
@@ -38,7 +38,7 @@ For more information and documentation, visit:
 https://backbone-rigid-invariant.readthedocs.io
 """
 
-__version__ = "1.3.0"
+__version__ = "1.3.1"
 __author__ = "Ziqiu Jiang"
 __maintainer__ = "Ziqiu Jiang"
 __email__ = "jiangziqiu02@gmail.com"
@@ -67,5 +67,3 @@ def __getattr__(name: str):
 
 
 from .structure import Residue, ProteinChain, ProteinEntry
-
-# https://average-minimum-distance.readthedocs.io.

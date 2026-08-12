@@ -74,9 +74,9 @@ For a complete, step-by-step introduction, see the tutorial notebooks in [`examp
 <!-- Run `python -m bri --help` to list all tasks.  -->
 <!-- The pipelines are documented in the [usage guide](https://backbone-rigid-invariant.readthedocs.io). -->
 
-<!-- ## Documentation -->
+## Documentation
 
-<!-- Full API documentation is hosted at <https://backbone-rigid-invariant.readthedocs.io>. -->
+Full API documentation is hosted at <https://backbone-rigid-invariant.readthedocs.io>.
 
 <!-- ## Version history -->
 

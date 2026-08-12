@@ -46,6 +46,7 @@ parquet = ["pyarrow>=22.0.0"]
 
 [project.urls]
 Homepage = "https://github.com/AAAAAkki/Backbone_invariant-public_release"
+Documentation = "https://backbone-rigid-invariant.readthedocs.io"
 
 [project.scripts]
 bri = "bri.main:main"

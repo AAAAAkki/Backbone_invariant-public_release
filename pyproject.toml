@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=64.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "backbone-rigid-invariant"
+description = "Descriptors of proteins based on geometry (complete rigid invariants)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "CC-BY-NC-SA-4.0"}
+dynamic = ["version", "dependencies"]
+keywords = [
+    "isometry invariant", "geometric data science", "protein", "bri", "similarity", "distance", "mmcif"
+]
+authors = [{name = "Ziqiu Jiang", email = "jiangziqiu02@gmail.com"}]
+maintainers = [{name = "Ziqiu Jiang", email = "jiangziqiu02@gmail.com"}]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: Other/Proprietary License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Biology",
+    "Topic :: Scientific/Engineering :: Mathematics"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = {attr = "bri.__version__"}
+dependencies = {file = "requirements.txt"}
+
+[tool.black]
+target-version = ["py310", "py311", "py312"]
+
+[project.optional-dependencies]
+dev = ["pytest", "sphinx", "git-cliff", "sphinx-mdinclude"]
+parquet = ["pyarrow>=22.0.0"]
+
+[project.urls]
+Homepage = "https://github.com/AAAAAkki/Backbone_invariant-public_release"
+
+[project.scripts]
+bri = "bri.main:main"

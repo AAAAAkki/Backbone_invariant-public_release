@@ -113,5 +113,3 @@ BibTeX:
   doi     = {10.46793/match.94-1.097A}
 }
 ```
-
-A preprint is available at [arXiv:2410.08203](https://arxiv.org/abs/2410.08203).

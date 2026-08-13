@@ -6,7 +6,7 @@ including file loading, data conversion, and structure representation.
 
 import json
 import msgpack
-import os
+from importlib.resources import files, read_text
 from pathlib import Path
 from typing import overload, Literal, Optional, Any
 
@@ -330,11 +330,8 @@ class StructureBase:
 
 
 # Reference: https://www.wwpdb.org/data/ccd
-with open(
-    os.path.dirname(os.path.abspath(__file__)) + "/chemical_component_dictionary.json",
-    "r",
-) as f:
-    amino_acid_short = json.load(f)
+json_txt = read_text("bri.data", "chemical_component_dictionary.json")
+amino_acid_short = json.loads(json_txt)
 
 basic_amino_acid_20 = (
     "ALA",

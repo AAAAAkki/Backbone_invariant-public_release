@@ -28,7 +28,12 @@ import pandas as pd
 from bri.structure import ProteinEntry, ProteinChain
 from bri.invariant_compare import group_invariant_compare
 
-from bri.invariant import get_invariant as _compute_invariant, LAI_COLUMNS, BRI_COLUMNS
+from bri.invariant import (
+    get_invariant as _compute_invariant,
+    LAI_COLUMNS,
+    BRI_COLUMNS,
+    INVARIANT_META_COLUMNS,
+)
 
 logger = logging.getLogger("BRI")
 
@@ -131,8 +136,7 @@ def compute_dir_invariants(
         n_process = max(1, mp.cpu_count() // 2)
 
     logger.info(
-        f"Computing invariants for {len(struct_files)} file(s) "
-        f"using {n_process} worker(s)."
+        f"Computing invariants for {len(struct_files)} file(s) using {n_process} worker(s)."
     )
     pool = mp.Pool(n_process)
     worker = functools.partial(compute_and_save_invariant, output_dir=output_dir)
@@ -422,7 +426,7 @@ def _apply_y_limits(ax, col: str):
         ax.set_yticks([0, 1, 2])
 
 
-def _unwrap_torsion(values, col: str):
+def _unwrap_torsion(values, col: str) -> pd.Series:
     """Shift *tau(CN)* values below −90° by +360° to avoid the wrap-around."""
     if col == "tau(CN)":
         values = values.copy()
@@ -514,33 +518,41 @@ def plot_invariant_curves(
     # --- Reference (red) ---
     ref_chain = _resolve_reference(reference)
     if ref_chain is not None:
-        ref_inv = _compute_invariant(
-            ref_chain.to_dataframe(backbone_only=True), angle=True
-        )
+        bri = ref_chain.get_invariant()
+        lai = ref_chain.get_invariant("lai")
+        ref_inv = pd.merge(bri, lai, on=INVARIANT_META_COLUMNS)
+
+        res_ids = ref_inv["residue_id"].astype(int)
+        # Detect discontinuities in residue to draw separate segments.
+        gap_positions = np.flatnonzero(res_ids.diff().fillna(0) > 1)
+        segment_starts = [0, *gap_positions.tolist()]
+        segment_ends = [*gap_positions.tolist(), len(ref_inv)]
+
+        if offset:
+            res_ids = res_ids - offset
+
         for i, col in enumerate(available):
             if col not in ref_inv.columns:
                 continue
-            res_ids = ref_inv["residue_id"].astype(int)
-            if offset:
-                res_ids = res_ids - offset
             values = pd.to_numeric(ref_inv[col], errors="coerce")
             values = _unwrap_torsion(values, col)
-            axes[i].plot(
-                res_ids,
-                values,
-                color="darkred",
-                linewidth=1.0,
-                marker="o",
-                markersize=1.5,
-                label="reference",
-            )
-        axes[0].legend(fontsize=8)
+            for s, e in zip(segment_starts, segment_ends):
+                axes[i].plot(
+                    res_ids.iloc[s:e],
+                    values.iloc[s:e],
+                    color="darkred",
+                    linewidth=1.2,
+                    marker="o",
+                    markersize=1.7,
+                )
+        max_len = int(max(max_len, res_ids.max()))
 
     # --- Formatting ---
     for i, col in enumerate(available):
+        axes[i].set_xlim(-1, max_len + 2)
         axes[i].set_ylabel(col, fontsize=9)
         _apply_y_limits(axes[i], col)
-        axes[i].set_xticks(list(range(1, max_len, 10)) + [max_len])
+        axes[i].set_xticks(list(range(1, max_len, 10)))
         axes[i].grid(alpha=0.3)
 
     axes[-1].set_xlabel("Residue number")

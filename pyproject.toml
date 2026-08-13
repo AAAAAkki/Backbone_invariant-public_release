@@ -49,4 +49,4 @@ Homepage = "https://github.com/AAAAAkki/Backbone_invariant-public_release"
 Documentation = "https://backbone-rigid-invariant.readthedocs.io"
 
 [project.scripts]
-bri = "bri.main:main"
+bri = "bri.cli:cli"

@@ -1,18 +1,13 @@
-"""Main module for Backbone Rigid Invariant (BRI) evaluation tool.
+"""Entry point for Backbone Rigid Invariant (BRI) evaluation tool.
 
-This module provides the main functionality for running BRI evaluation tasks,
-including data cleaning and BRI computation. It handles command-line arguments,
-logging setup, and parallel processing of tasks.
+This module allows running the BRI CLI via ``python -m bri``.
 
-Example:
-    To run the cleaning task:
-        $ python main.py --task clean --input-data path/to/data
+Example::
 
-    To run the BRI computation:
-        $ python main.py --task bri --input-data path/to/data
+    $ python -m bri inv pdbs/ output/
 """
 
-import bri.main as main
+from bri.cli import cli
 
 if __name__ == "__main__":
-    main.main()
+    cli()

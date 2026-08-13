@@ -3,20 +3,20 @@
 Three tutorial notebooks introduce the package step by step. They are designed to
 be read in order — each one builds on the previous.
 
-1. **[tutorial-1.ipynb](tutorial-1.ipynb)** — *Loading structures & computing invariants.*
+1. **[examples-part1.ipynb](examples-part1.ipynb)** — *Loading structures & computing invariants.*
 
    Load a protein structure (by PDB ID, file path, or URL), inspect its chains and
    residues, compute the Backbone Rigid Invariant (BRI) and Local Angle Invariant
    (LAI), and visualise a single chain with the Backbone Invariant Diagram (BID) and
    Backbone Invariant Barcode (BIB).
 
-2. **[tutorial-2.ipynb](tutorial-2.ipynb)** — *Comparing multiple chains.*
+2. **[examples-part2.ipynb](examples-part2.ipynb)** — *Comparing multiple chains.*
 
    Compare the backbone geometry of two or more chains, quantify how different they
    are, and visualise the results as distance matrices and projections (including an
    NMR ensemble example).
 
-3. **[tutorial-3.ipynb](tutorial-3.ipynb)** — *Finding similar structures with a k-d tree.*
+3. **[examples-part3.ipynb](examples-part3.ipynb)** — *Finding similar structures with a k-d tree.*
 
    Scale comparison up to database size: index a set of structures and query for the
    nearest neighbours of a given chain, instead of brute-force all-pairs comparison.

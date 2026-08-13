@@ -59,7 +59,7 @@ bri = chain.get_invariant()                 # -> pandas.DataFrame, one row per r
 lai = chain.get_invariant(invariant_type="lai")  # add bond/torsion-angle columns
 ```
 
-For a complete, step-by-step introduction, see the tutorial notebooks in [`examples/`](examples/).
+For a complete, step-by-step introduction, see the tutorial notebooks in [`examples/`](https://github.com/AAAAAkki/Backbone_invariant-public_release/tree/main/examples).
 
 <!-- ### Command-line pipelines -->
 <!---->

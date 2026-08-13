@@ -5,12 +5,12 @@
 
 .. mdinclude:: ../../README.md
 
-.. toctree::
-   :hidden:
-   :maxdepth: 2
-   :caption: Using bri:
-
-   pipelines
+.. .. toctree::
+..    :hidden:
+..    :maxdepth: 2
+..    :caption: Using bri:
+..
+..    pipelines
 
 .. toctree::
    :hidden:

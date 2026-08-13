@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.abspath(r"../../src"))
 project = "Backbone-Rigid-Invariant"
 copyright = "2024, Ziqiu Jiang"
 author = "Ziqiu Jiang"
-release = "1.3.1"
+release = "1.3.2"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

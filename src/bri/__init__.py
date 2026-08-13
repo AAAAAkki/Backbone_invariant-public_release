@@ -38,7 +38,7 @@ For more information and documentation, visit:
 https://backbone-rigid-invariant.readthedocs.io
 """
 
-__version__ = "1.3.1"
+__version__ = "1.3.2"
 __author__ = "Ziqiu Jiang"
 __maintainer__ = "Ziqiu Jiang"
 __email__ = "jiangziqiu02@gmail.com"

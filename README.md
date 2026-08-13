@@ -24,18 +24,18 @@ Python **>= 3.10**.
 
 ### Installation
 
-<!-- Install from PyPI: -->
-<!---->
-<!-- ```shell -->
-<!-- pip install backbone-rigid-invariant -->
-<!-- ``` -->
+Install from PyPI:
+
+```shell
+pip install backbone-rigid-invariant
+```
 
 Install from a built distribution in this repository:
 
 ```shell
-pip install backbone_rigid_invariant-<version>-py3-none-any.whl
-# or
 pip install backbone_rigid_invariant-<version>.tar.gz
+# or
+pip install backbone_rigid_invariant-<version>-py3-none-any.whl
 ```
 
 Then import the package with `import bri`.

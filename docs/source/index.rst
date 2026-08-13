@@ -22,7 +22,6 @@
    bri.structure
    bri.invariant
    bri.invariant_compare
-   bri.clash_filter
 
 Indices and tables
 ==================

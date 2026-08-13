@@ -11,45 +11,45 @@
 
 import os
 import sys
-sys.path.insert(0, os.path.abspath(r'../../src'))
+
+sys.path.insert(0, os.path.abspath(r"../../src"))
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Backbone-Rigid-Invariant'
-copyright = '2024, Ziqiu Jiang'
-author = 'Ziqiu Jiang'
-release = '1.3.0'
+project = "Backbone-Rigid-Invariant"
+copyright = "2024, Ziqiu Jiang"
+author = "Ziqiu Jiang"
+release = "1.3.1"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.napoleon',
-    'sphinx.ext.intersphinx',
-    'sphinx_mdinclude',
-    ]
+    "sphinx.ext.autodoc",
+    "sphinx.ext.napoleon",
+    "sphinx.ext.intersphinx",
+    "sphinx_mdinclude",
+]
 
-templates_path = ['_templates']
+templates_path = ["_templates"]
 exclude_patterns = []
 
 intersphinx_mapping = {
-    'biotite':   ('https://www.biotite-python.org/latest/', None),
-    'matplotlib': ('https://matplotlib.org/stable/', None),
-    'numpy':    ('https://numpy.org/doc/stable/', None),
+    "biotite": ("https://www.biotite-python.org/latest/", None),
+    "matplotlib": ("https://matplotlib.org/stable/", None),
+    "numpy": ("https://numpy.org/doc/stable/", None),
     # 'numba':    ('https://numba.pydata.org/numba-doc/latest/', None),
-    'pandas':   ('https://pandas.pydata.org/docs/', None),
-    'scipy':    ('https://docs.scipy.org/doc/scipy/', None),
+    "pandas": ("https://pandas.pydata.org/docs/", None),
+    "scipy": ("https://docs.scipy.org/doc/scipy/", None),
     # 'tqdm':     ('https://tqdm.github.io/', None),
-    }
+}
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
-html_static_path = ['_static']
+html_theme = "alabaster"
 
 # -- Options for autodoc -------------------------------------------------
 autoclass_content = "both"
-autodoc_member_order = 'bysource'
+autodoc_member_order = "bysource"

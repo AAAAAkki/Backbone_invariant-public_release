@@ -1,5 +1,17 @@
 # Backbone Rigid Invariant
 
+## References
+
+1. Olga Anosova, Alexey Gorelov, William Jeffcott, Ziqiu Jiang, and Vitaliy Kurlin.
+   *A Complete and Bi-Continuous Invariant of Protein Backbones under Rigid Motion.*
+   MATCH Communications in Mathematical and in Computer Chemistry, 94(1):97–134, 2025.
+   DOI: [10.46793/match.94-1.097A](https://doi.org/10.46793/match.94-1.097A)
+2. Alexander Wlodawer, Zbigniew Dauter, Piotr Rubach, Wladek Minor, Mariusz Jaskolski,
+   William Jeffcott, Ziqiu Jiang, Olga Anosova, and Vitaliy Kurlin.
+   *Duplicate entries in the Protein Data Bank: how to detect and handle them.*
+   Acta Crystallographica Section D: Structural Biology, 81(4):170–180, 2025.
+   DOI: [10.1107/S2059798325001883](https://doi.org/10.1107/S2059798325001883)
+
 ## Introduction
 
 **Backbone Rigid Invariant (BRI)** is a Python package for describing the 3D shape
@@ -15,6 +27,11 @@ This package enables:
    Invariants (LAI, bond lengths / bond angles / torsion angles) for a given chain.
 3. **Comparing** chains quickly — computing distances between invariants to find
    near-duplicate protein structures.
+
+**ProtNRD** — the [Protein Neighbouring Residue Dashboard](https://github.com/moracore/ProtNRD/tree/main) —
+is a companion open-source web tool from the same research group. It offers an interactive 3D
+Ramachandran-style visualisation for exploring how neighbouring residues influence backbone
+geometry, over high-quality experimental structures from the PDB. 
 
 ## Getting started
 
@@ -63,8 +80,6 @@ For a complete, step-by-step introduction, see the tutorial notebooks in [`examp
 
 <!-- ### Command-line pipelines -->
 <!---->
-<!-- Common workflows are also exposed through a command-line interface: -->
-<!---->
 <!-- ```shell -->
 <!-- python -m bri --task clean     --input-data entry_ids.txt --output results/ -->
 <!-- python -m bri --task bri       --input-data results/chains_cleaned.csv --output results/bri/ -->
@@ -81,14 +96,8 @@ Full API documentation is hosted at <https://backbone-rigid-invariant.readthedoc
 <!-- ## Version history -->
 
 > **Note on the commit history.** 
-<!-- > This repository was transferred from a private project.  -->
 > The Git history was reset when preparing the public release, so the log starts from the initial public commit. 
 <!-- > The full record of changes is available in [CHANGELOG.md](CHANGELOG.md).  -->
-
-<!-- ## License -->
-<!---->
-<!-- This project is licensed under -->
-<!-- [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC-BY-NC-SA-4.0)](LICENSE). -->
 
 ## Citation
 
